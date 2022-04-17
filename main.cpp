@@ -1,23 +1,22 @@
 /**
  * 
- * -------------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾-------------------------
+ * -------------------------¸üÐÂÈÕÖ¾-------------------------
  * 20210706
- * V0.0.0 ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ½ï¿½ï¿½æ¼°ï¿½ï¿½Ï·ï¿½ï¿½ï¿½
+ * V0.0.0 ÓÎÏ·µ®Éú£¬ÖÆ×÷ÁËËùÓÐµÄ½çÃæ¼°ÓÎÏ·´ó¸Å
  * 
  * 
- * Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * Î´Íê´ýÐø¡­¡­
 **/
 #include <iostream>
 #include <unistd.h>
 #include <stdlib.h>
 #include <cctype>
 #include <time.h>
-#include <conio.h>
-
+#include"conio.h"
 #define ForEver while(true)
 #define Bst break;
 #define Normal cout << "\033[0m"
-#define Back cout << "\nEnterï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"; char c = played()
+#define Back cout << "\n-Enter¼ü¼ÌÐø-";char c = played()
 namespace LColorSTD {
     #define LRed            'r'
     #define LGreen          'g'
@@ -57,7 +56,8 @@ char played() {
 	char c;
 	//system("stty -echo");
 	//system("stty -icanon");
-	c = getch();
+	//c = getchar();
+    c = getch();
 	//system("stty icanon");
 	//system("stty echo");
 	return c;
@@ -71,42 +71,42 @@ int Random(const int a,const int b) {
     return num;
 }
 
-void ucolor(const char c) {              //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½
+void ucolor(const char c) {              //±³¾°ÑÕÉ«¿ØÖÆº¯Êý
     switch(c) {
-        case 'r':cout << "\033[41m";Bst; //    red ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 'g':cout << "\033[42m";Bst; //  green ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 'y':cout << "\033[43m";Bst; // yellow ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 'b':cout << "\033[44m";Bst; //   blue ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 'p':cout << "\033[45m";Bst; // purple ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 'c':cout << "\033[46m";Bst; //   cyan ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 'w':cout << "\033[47m";Bst; //  white ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 'd':cout << "\033[40m";Bst; //   dark ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É«
-        case 't':cout << "\n";           // return ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-        default :Normal;                 //           ï¿½Ë³ï¿½
+        case 'r':cout << "\033[41m";Bst; //    red ¡ª¡ª ºìÉ«
+        case 'g':cout << "\033[42m";Bst; //  green ¡ª¡ª ÂÌÉ«
+        case 'y':cout << "\033[43m";Bst; // yellow ¡ª¡ª »ÆÉ«
+        case 'b':cout << "\033[44m";Bst; //   blue ¡ª¡ª À¶É«
+        case 'p':cout << "\033[45m";Bst; // purple ¡ª¡ª ×ÏÉ«
+        case 'c':cout << "\033[46m";Bst; //   cyan ¡ª¡ª ÇàÉ«
+        case 'w':cout << "\033[47m";Bst; //  white ¡ª¡ª °×É«
+        case 'd':cout << "\033[40m";Bst; //   dark ¡ª¡ª ºÚÉ«
+        case 't':cout << "\n";           // return ¡ª¡ª »»ÐÐ
+        default :Normal;                 //           ÍË³ö
     }
 }
 
 void mcolor(const char c) {
     switch(c) {
-        case 'r':cout << "\033[0;31m";Bst; // ï¿½ï¿½É«
-        case 'u':cout << "\033[1;31m";Bst; // ï¿½ï¿½ï¿½ï¿½
-        case 'g':cout << "\033[0;32m";Bst; // ï¿½ï¿½É«
-        case 'q':cout << "\033[1;32m";Bst; // ï¿½ï¿½ï¿½ï¿½ 
-        case 'f':cout << "\033[0;33m";Bst; // ï¿½ï¿½É«
-        case 'y':cout << "\033[1;33m";Bst; // ï¿½ï¿½É«
-        case 'b':cout << "\033[0;34m";Bst; // ï¿½ï¿½É«
-        case 't':cout << "\033[1;34m";Bst; // Ç³ï¿½ï¿½
-        case 'p':cout << "\033[0;35m";Bst; // ï¿½ï¿½É«
-        case 'e':cout << "\033[1;35m";Bst; // Ç³ï¿½ï¿½
-        case 'c':cout << "\033[0;36m";Bst; // ï¿½ï¿½É«
-        case 'o':cout << "\033[1;36m";Bst; // Ç³ï¿½ï¿½
-        case 'h':cout << "\033[0;37m";Bst; // Ç³ï¿½ï¿½
-        case 'w':cout << "\033[1;37m";Bst; // ï¿½ï¿½É«
-        case 'd':cout << "\033[0;30m";Bst; // ï¿½ï¿½É«
-        case 'a':cout << "\033[1;30m";Bst; // ï¿½ï¿½ï¿½
-        default :Normal;                   // ï¿½Ë³ï¿½
+        case 'r':cout << "\033[0;31m";Bst; // ºìÉ«
+        case 'u':cout << "\033[1;31m";Bst; // ÁÁºì
+        case 'g':cout << "\033[0;32m";Bst; // ÂÌÉ«
+        case 'q':cout << "\033[1;32m";Bst; // ÁÁÂÌ 
+        case 'f':cout << "\033[0;33m";Bst; // ×ØÉ«
+        case 'y':cout << "\033[1;33m";Bst; // »ÆÉ«
+        case 'b':cout << "\033[0;34m";Bst; // À¶É«
+        case 't':cout << "\033[1;34m";Bst; // Ç³À¶
+        case 'p':cout << "\033[0;35m";Bst; // ×ÏÉ«
+        case 'e':cout << "\033[1;35m";Bst; // Ç³×Ï
+        case 'c':cout << "\033[0;36m";Bst; // ÇàÉ«
+        case 'o':cout << "\033[1;36m";Bst; // Ç³Çà
+        case 'h':cout << "\033[0;37m";Bst; // Ç³»Ò
+        case 'w':cout << "\033[1;37m";Bst; // °×É«
+        case 'd':cout << "\033[0;30m";Bst; // ºÚÉ«
+        case 'a':cout << "\033[1;30m";Bst; // Éî»Ò
+        default :Normal;                   // ÍË³ö
     }
-}          //ï¿½Öµï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½
+}          //×ÖµÄÑÕÉ«¿ØÖÆº¯Êý
 
 bool findWord(const string s1,const string s2) {
     long l1 = s1.length();
@@ -237,11 +237,11 @@ public:
     bool isHave;
     
     void printEnginLevel() {
-        if(level == "ï¿½ï¿½Í¨") mcolor(LBright_Gray);
-        else if(level == "Ï¡ï¿½ï¿½") mcolor(LBright_Green);
-        else if(level == "ï¿½ï¿½Æ·") mcolor(LBlue);
+        if(level == "ÆÕÍ¨") mcolor(LBright_Gray);
+        else if(level == "Ï¡ÓÐ") mcolor(LBright_Green);
+        else if(level == "¾«Æ·") mcolor(LBlue);
         else if(level == "Ê·Ê«") mcolor(LPurple);
-        else if(level == "ï¿½ï¿½ï¿½ï¿½") mcolor(LYellow);
+        else if(level == "´«Ææ") mcolor(LYellow);
         
         cout << "[" << level << "] ";
     }
@@ -251,12 +251,12 @@ public:
         printEnginLevel();
         if(name == class_Player_handEngin_name) {
             mcolor(LBright_Purple);
-            cout << "[ï¿½ï¿½×°ï¿½ï¿½]\n";
+            cout << "[ÒÑ×°±¸]\n";
                 
             Normal;
-            cout << "ï¿½ï¿½ï¿½Ü£ï¿½" << introduce << "\n";
-            cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << aggSml << "~" << aggBig << "\n";
-            cout << "ï¿½Û³ï¿½ï¿½Û¸ï¿½" << outG << "G\n\n";
+            cout << "½éÉÜ£º" << introduce << "\n";
+            cout << "¹¥»÷£º" << aggSml << "~" << aggBig << "\n";
+            cout << "ÊÛ³ö¼Û¸ñ£º" << outG << "G\n\n";
             return;
         }
         
@@ -264,24 +264,24 @@ public:
             mcolor(LBrown);
             for(int i = 1;i <= class_Player_enginIndex;i++) {
                 if(name == class_Player_engins_name[i]) {
-                    cout << "[ï¿½ï¿½Óµï¿½ï¿½]\n";
+                    cout << "[ÒÑÓµÓÐ]\n";
                     break;
                 }
             }
             
             Normal;
-            cout << "ï¿½ï¿½ï¿½Ü£ï¿½" << introduce << "\n";
-            cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << aggSml << "~" << aggBig << "\n";
-            cout << "ï¿½Û³ï¿½ï¿½Û¸ï¿½" << outG << "G\n\n";
+            cout << "½éÉÜ£º" << introduce << "\n";
+            cout << "¹¥»÷£º" << aggSml << "~" << aggBig << "\n";
+            cout << "ÊÛ³ö¼Û¸ñ£º" << outG << "G\n\n";
             return;
         } else {
             mcolor(LBlue);
-            cout << "[Î´ï¿½ï¿½ï¿½]\n ";
+            cout << "[Î´»ñµÃ]\n ";
             
             Normal;
-            cout << "ï¿½ï¿½ï¿½Ü£ï¿½" << introduce << "\n";
-            cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << aggSml << "~" << aggBig << "\n";
-            cout << "ï¿½Û³ï¿½ï¿½Û¸ï¿½" << outG << "G\n\n";
+            cout << "½éÉÜ£º" << introduce << "\n";
+            cout << "¹¥»÷£º" << aggSml << "~" << aggBig << "\n";
+            cout << "ÊÛ³ö¼Û¸ñ£º" << outG << "G\n\n";
             return;
         }
     }
@@ -289,7 +289,7 @@ public:
 
 Enginery engin[31] = {
     {
-        "ï¿½ï¿½",
+        "ÎÞ",
         "",
         "",
         "",
@@ -305,9 +305,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½Ä½ï¿½",
-        "ï¿½â¼£ï¿½ß°ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Í¨",
+        "ÉúÐâµÄ½£",
+        "Ðâ¼£°ß°ß£¬±ðÈËËÍµÄÀñÎï",
+        "ÆÕÍ¨",
         "PU",
         2,
         5,
@@ -321,9 +321,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½Ê¸Ö½ï¿½",
-        "ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½Æ³É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¦ï¿½ï¿½",
-        "ï¿½ï¿½Í¨",
+        "ÇáÖÊ¸Ö½£",
+        "ÓÃ²»Ðâ¸ÖÖÆ³É£¬ÖÊÁ¿²»Õ¦µØ",
+        "ÆÕÍ¨",
         "LI",
         4,
         8,
@@ -337,9 +337,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ä¾ï¿½ï¿½",
-        "ï¿½ï¿½Ò»ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Í¨",
+        "Ä¾½£",
+        "¶ÔÒ»¿éÄ¾µñÀ´Ëµ²»´íÁË",
+        "ÆÕÍ¨",
         "MH",
         3,
         7,
@@ -353,9 +353,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½",
-        "ï¿½ï¿½Ñµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Í¨",
+        "º£µÁµÄ´óµ¶",
+        "Õâ°Ñµ¶Ôø¾­ÊÇº£µÁµÄÎäÆ÷",
+        "ÆÕÍ¨",
         "OE",
         8,
         14,
@@ -369,9 +369,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Í¨",
+        "¶ÆÒø¾üµ¶",
+        "¶ÆÒøÒÔ·ÀÐâ",
+        "ÆÕÍ¨",
         "KA",
         8,
         15,
@@ -385,9 +385,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½Ä¾ï¿½ï¿½",
-        "ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ËµÄ´ï¿½ï¿½Ò±ï¿½",
-        "ï¿½ï¿½Í¨",
+        "´óÄ¾´¸",
+        "ËÆºõÕâÊÇÄ¾½³ÈËµÄ´«¼Ò±¦",
+        "ÆÕÍ¨",
         "NQ",
         15,
         24,
@@ -401,9 +401,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½Ìµï¿½",
-        "Ð¡ï¿½ï¿½ï¿½ÌµÄµï¿½",
-        "ï¿½ï¿½Í¨",
+        "¶Ìµ¶",
+        "Ð¡¶ø¶ÌµÄµ¶",
+        "ÆÕÍ¨",
         "PZ",
         2,
         5,
@@ -417,9 +417,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "É­ï¿½ï¿½Ö®ï¿½ï¿½",
-        "Óµï¿½ï¿½É­ï¿½Ö¾ï¿½Ëµï¿½Ä§ï¿½ï¿½Ö®ï¿½ï¿½",
-        "Ï¡ï¿½ï¿½",
+        "É­ÁÖÖ®ÈÐ",
+        "ÓµÓÐÉ­ÁÖ¾ì¹ËµÄÄ§·¨Ö®½£",
+        "Ï¡ÓÐ",
         "JW",
         8,
         18,
@@ -433,9 +433,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ó±¦½ï¿½",
-        "ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½",
-        "Ï¡ï¿½ï¿½",
+        "´ó±¦½£",
+        "ºÜÖØµÄÀ«½£",
+        "Ï¡ÓÐ",
         "IE",
         12,
         25,
@@ -449,9 +449,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ò¹Ö®ï¿½ï¿½",
-        "É¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄºÚ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½",
-        "Ï¡ï¿½ï¿½",
+        "Ò¹Ö®ÈÐ",
+        "É¢·¢×ÅÉñÃØµÄºÚ°µÁ¦Á¿£¬ºÃÏñ¿ÉÒÔÍÌÊÉÒ»ÇÐ",
+        "Ï¡ÓÐ",
         "UC",
         10,
         30,
@@ -465,9 +465,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ê¥ï¿½ï¿½Ö®ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½Ç°ï¿½å½£",
-        "Ï¡ï¿½ï¿½",
+        "Ê¥ÌÃÖ®ÈÐ",
+        "ËüÔøÊÇÆïÊ¿µÄÐØÇ°Åå½£",
+        "Ï¡ÓÐ",
         "HD",
         22,
         29,
@@ -481,9 +481,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ç¦ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½Øºï¿½ï¿½Ø£ï¿½ï¿½ï¿½Òªï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»ÓµÃ¶ï¿½ï¿½Ä´ï¿½ï¿½",
-        "Ï¡ï¿½ï¿½",
+        "Ç¦°ô",
+        "ºÜÖØºÜÖØ£¬ÐèÒªÓÃ»ëÉíÁ¦Æø²ÅÄÜ»ÓµÃ¶¯µÄ´ó°ô",
+        "Ï¡ÓÐ",
         "VF",
         18,
         27,
@@ -497,9 +497,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ë®ï¿½ï¿½Ø°ï¿½ï¿½",
-        "ï¿½ï¿½Æ¬ï¿½Ç´ï¿½Ê¯Ó¢ï¿½Æ³ï¿½",
-        "Ï¡ï¿½ï¿½",
+        "Ë®¾§Ø°Ê×",
+        "µ¶Æ¬ÊÇ´¿Ê¯Ó¢ÖÆ³É",
+        "Ï¡ÓÐ",
         "GP",
         10,
         15,
@@ -513,9 +513,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½Â¿ï¿½",
-        "Ò»ï¿½Ñ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½×£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
-        "Ï¡ï¿½ï¿½",
+        "ÌúµÂ¿Ë",
+        "Ò»°Ñ³£¼ûµÄÌúØ°Ê×£¬·ÀÉíÎäÆ÷",
+        "Ï¡ÓÐ",
         "YR",
         8,
         20,
@@ -529,9 +529,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ñ©ï¿½ï¿½Ö®ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ÉªÉªï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Æ·",
+        "Ñ©¹ÖÖ®ÑÀ",
+        "º®Æø±ÆÈË£¬ÈÃÄãÉªÉª·¢¶¶",
+        "¾«Æ·",
         "TK",
         26,
         42,
@@ -545,9 +545,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½Ä§Ö®ï¿½ï¿½",
-        "ï¿½ï¿½Ëµï¿½Ðµï¿½ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½Â¶È¼ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Æ·",
+        "Ñ×Ä§Ö®ÑÀ",
+        "´«ËµÖÐµÄÑ×Ä§µÄÀû³Ý£¬ÎÂ¶È¼«¸ß",
+        "¾«Æ·",
         "FL",
         26,
         42,
@@ -561,9 +561,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½Ç°ï¿½",
-        "ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Æ·",
+        "´ó¹Ç°ô",
+        "¿ÉÒÔ´¸·ÉÈËµÄÄÇÖÖ",
+        "¾«Æ·",
         "CP",
         29,
         36,
@@ -577,9 +577,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ê¥ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Æ·",
+        "Ê¥½£",
+        "ÎÕÔÚÊÖÖÐ³äÂúÁ¦Á¿£¬ÊÇÉñÊ¥µÄÎäÆ÷",
+        "¾«Æ·",
         "BS",
         18,
         24,
@@ -593,9 +593,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½",
-        "Óµï¿½Ðºï¿½Ö®ï¿½ï¿½Ëµï¿½Ä§ï¿½ï¿½Ö®ï¿½ï¿½",
-        "ï¿½ï¿½Æ·",
+        "º£ÍõÐÇÖ®½£",
+        "ÓµÓÐº£Ö®¾ì¹ËµÄÄ§·¨Ö®½£",
+        "¾«Æ·",
         "XZ",
         18,
         35,
@@ -609,9 +609,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½Ê¯ï¿½ï¿½",
-        "ï¿½â¶«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ±ï¿½",
-        "ï¿½ï¿½Æ·",
+        "ºÚê×Ê¯´óµ¶",
+        "Õâ¶«Î÷·æÀûÎÞ±È",
+        "¾«Æ·",
         "DK",
         30,
         45,
@@ -625,9 +625,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "Ë«ï¿½Ð´ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½Þ±ÈµÄ´ï¿½",
-        "ï¿½ï¿½Æ·",
+        "Ë«ÈÐ´ó½ðµ¶",
+        "¾ÞÖØÎÞ±ÈµÄ´ó½£",
+        "¾«Æ·",
         "RI",
         20,
         32,
@@ -641,9 +641,9 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½Ú»ï¿½É½ï¿½Úµï¿½ï¿½ï¿½",
-        "ï¿½ï¿½Æ·",
+        "ÈÛÑÒÎäÊ¿µ¶",
+        "ÓÃÈÛÑÒÁ¶³É£¬ÔÚ»ðÉ½¿Úµ®Éú",
+        "¾«Æ·",
         "EU",
         55,
         64,
@@ -657,8 +657,8 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½",
-        "Ò»ï¿½ï¿½Ñ¸ï¿½Ùµï¿½Ð¡ï¿½ï¿½Æ¬",
+        "·çËþ",
+        "Ò»¸öÑ¸ËÙµÄÐ¡µ¶Æ¬",
         "Ê·Ê«",
         "SY",
         20,
@@ -673,8 +673,8 @@ Enginery engin[31] = {
         true,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½Å·ï¿½É¥ï¿½ï¿½",
+        "ÀÇÑÀ°ô",
+        "ÁîÈËÎÅ·çÉ¥µ¨",
         "Ê·Ê«",
         "ZN",
         29,
@@ -690,7 +690,7 @@ Enginery engin[31] = {
         false
     },{
         "kudgel",
-        "Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
+        "Ò°ÂùµÄÎäÆ÷",
         "Ê·Ê«",
         "AO",
         37,
@@ -705,8 +705,8 @@ Enginery engin[31] = {
         false,
         false
     },{
-        "Ð°ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ë¹",
-        "ï¿½ï¿½Æ¬ï¿½ï¿½Ò¿ï¿½Ï½ï¿½",
+        "Ð°¶ñµÄ¿ËÀïË¹",
+        "µ¶Æ¬ÊÇÒ¿ºÏ½ð",
         "Ê·Ê«",
         "QL",
         34,
@@ -721,8 +721,8 @@ Enginery engin[31] = {
         false,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½Ä´ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½",
+        "±©ÔêµÄ´óµ¶",
+        "Ëü¿´ÆðÀ´¿ÉÒÔ³ÐÊÜÈÎºÎÊÂÇé",
         "Ê·Ê«",
         "RJ",
         39,
@@ -737,9 +737,9 @@ Enginery engin[31] = {
         false,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½",
-        "Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄ´ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½",
+        "¼àÓü",
+        "Ò»¸ö¼«ÖØµÄ´óÄ¾´¸£¬»÷·ÉµÐÈË",
+        "´«Ææ",
         "TO",
         40,
         55,
@@ -753,9 +753,9 @@ Enginery engin[31] = {
         false,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½",
+        "¾ÞÈËÖ®µ¶",
+        "¾ÞÈËÁôÏÂµÄÒÅÎï",
+        "´«Ææ",
         "GH",
         45,
         57,
@@ -769,9 +769,9 @@ Enginery engin[31] = {
         false,
         false
     },{
-        "ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½",
-        "ï¿½ï¿½ï¿½ï¿½",
+        "ÒøºÓÖ®½£",
+        "ÄãÎÅËùÎ´ÎÅ",
+        "´«Ææ",
         "RY",
         60,
         80,
@@ -811,7 +811,7 @@ public:
     int nowEXP;
     
     void printG() {
-        cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ ";
+        cout << "ÄúÏÖÔÚÓµÓÐ ";
         mcolor(LYellow);
         cout << G << "G\n";
         Normal;
@@ -821,7 +821,7 @@ public:
         v_engin.isHave = true;
         engins[++enginIndex] = v_engin;
         class_Player_engins_name[++class_Player_enginIndex] = v_engin.name;
-        cout << "(ï¿½ï¿½ï¿½ï¿½ï¿½" << v_engin.name << ")\n";
+        cout << "(»ñµÃÁË" << v_engin.name << ")\n";
         char c = played();
     }
     
@@ -831,8 +831,8 @@ public:
             cout << i << ". ";
             engins[i].synopsis();
         }
-        cout << "\nï¿½ï¿½ï¿½ï¿½use [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n"
-             << "ï¿½ï¿½ï¿½ï¿½throwAway [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n";
+        cout << "\nÊäÈëuse [ÎäÆ÷±àºÅ] ¿ÉÒÔÊ¹ÓÃÎäÆ÷\n"
+             << "ÊäÈëthrowAway [ÎäÆ÷±àºÅ] ¿ÉÒÔ³öÊÛÎäÆ÷\n";
         int n;
         string s;
         cin >> s;
@@ -939,7 +939,7 @@ public:
 
 Mon mon[51] {
     {},{
-        "ï¿½ï¿½ï¿½ï¿½",
+        "÷¼÷Ã",
         80,
         8,
         15,
@@ -963,25 +963,25 @@ public:
 
 Map risk[5] {
     {},{
-        "ï¿½ï¿½ï¿½Ã¶ï¿½Ñ¨",
+        "÷¼÷Ã¶´Ñ¨",
         6,
         {mon[0],mon[1]},
         1,
         false
     },{
-        "ï¿½ï¿½Ë®ï¿½ï¿½",
+        "ÉîË®¹µ",
         3,
         {},
         0,
         false
     },{
-        "ï¿½Ø±ï¿½",
+        "µØ±¤",
         11,
         {},
         0,
         false
     },{
-        "É³Ä®Õ½ï¿½ï¿½",
+        "É³Ä®Õ½³¡",
         999999,
         {},
         0,
@@ -990,49 +990,49 @@ Map risk[5] {
 };
 
 void mainView() {
-    cout << "1. ï¿½ï¿½Ì¨ï¿½ï¿½";
+    cout << "1. ÀÞÌ¨Èü";
     if(player.arenaOver)
-        cout << "ï¿½ï¿½Í¨ï¿½Ø³É¹ï¿½ï¿½ï¿½\n";
+        cout << "¡¾Í¨¹Ø³É¹¦¡¿\n";
     else
         cout << "\n";
-    cout << "2. Ã°ï¿½ï¿½Ö®ï¿½ï¿½\n";
-    cout << "3. ï¿½Ç¶ï¿½Ê¿\n";
-    cout << "4. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n";
-    cout << "5. ï¿½Ìµï¿½\n";
-    cout << "6. ï¿½ï¿½ï¿½æ²¢ï¿½Ë³ï¿½\n\n";
+    cout << "2. Ã°ÏÕÖ®ÂÃ\n";
+    cout << "3. ½Ç¶·Ê¿\n";
+    cout << "4. ±øÆ÷¿â\n";
+    cout << "5. ÉÌµê\n";
+    cout << "6. ±£´æ²¢ÍË³ö\n\n";
 }
 
 // Story
 
 void action() {
     char c;
-    cout << "1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í· 2.ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n";
+    cout << "1.Ìø¹ý¿ªÍ· 2.²é¿´¹ÊÊÂÇé½Ú\n";
     c = played();
     if(c == '1') {
         player.haveEngin(engin[1]);
         return;
     }
     system("CLS");
-    print("ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
-    print("ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½Ê±ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½Ö®ï¿½ï¿½");
-    print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï§ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½Ï²ï¿½ï¿½ï¿½Õ½ï¿½ï¿½ï¿½ï¿½");
-    print("ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½");
-    print("ï¿½ï¿½ï¿½Å°É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½");
+    print("ÄãºÃ°¡£¬ÄêÇáÈË");
+    print("ÎÒÊÇÉÏ¸öÊ±´úµÄ¾ö¶·Ö®Íõ");
+    print("°¦£¬¿ÉÏ§ÎÒÀÏÁË£¬²»ÖÐÓÃÁË£¬ÉÏ²»ÁËÕ½³¡ÁË");
+    print("ÎÒÓÐÒ»¸ö±¦±´ÏëËÍ¸øÄã");
+    print("ÄÃ×Å°É£¬Ëü»á¸øÄã´øÀ´ºÃÔËµÄ");
     player.haveEngin(engin[1]);
 }
 
 void theClubStory() {
     system("CLS");
     char c;
-    print("ï¿½Û£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶\n");
-    print("Òªï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½Õ¼Ò¹ï¿½ï¿½ï¿½\n");
-    print("ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ï¿½Î£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½á¹©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+    print("ÍÛ£¬ÄãµÄ¼¼Êõ»¹²»´íÅ¶\n");
+    print("Òª²»Òª¿¼ÂÇÒ»ÏÂ¼ÓÈëÎÒÃÇÃ°ÏÕ¼Ò¹¤»á\n");
+    print("ÎÒÃÇ»áÔÚÄãÎ£ÄÑÊ±¿ÌÌá¹©°ïÖúµÄ\n");
     do {
-        print("1.ï¿½ï¿½ï¿½ï¿½ 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+        print("1.¼ÓÈë 2.²»¼ÓÈë\n");
         c = played();
     } while(c == 2);
-    print("ï¿½ÃµÄ£ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
-    print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+    print("ºÃµÄ£¬ÄÇ¾ÍÕâÑù¶¨ÁË\n");
+    print("×îºóËÍÄã¸öÀñÎï\n");
     player.haveEngin(engin[2]);
 }
 
@@ -1042,7 +1042,7 @@ void introduceView() {
     system("CLS");
     string enginName;
     bool flag = false;
-    cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½";
+    cout << "ÊäÈëÎäÆ÷Ãû³Æ£º";
     cin >> enginName;
     system("CLS");
     for(int i = 1;i <= ENGINNUM;i++) {
@@ -1052,7 +1052,7 @@ void introduceView() {
         }
     }
     if(flag == false) {
-        cout << "ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << enginName << "\n";
+        cout << "ÕÒ²»µ½ÎäÆ÷" << enginName << "\n";
     }
     char cc = played();
     Back;
@@ -1076,11 +1076,11 @@ void actionFoe(Foe &thisFoe) {
 
 void myself() {
     system("CLS");
-    cout << "ï¿½Ç¶ï¿½Ê¿" << "ï¿½È¼ï¿½" << player.level << "\n";
+    cout << "½Ç¶·Ê¿" << "µÈ¼¶" << player.level << "\n";
     cout << player.nowEXP << "EXP\n";
     cout << player.G << "G\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½ " << player.handEngin.name << "\n";
-    cout << "×°ï¿½ï¿½ï¿½ï¿½ e\n";
+    cout << "ÎäÆ÷ " << player.handEngin.name << "\n";
+    cout << "×°±¸¿â e\n";
     char c = played();
     switch (c) {
     case 'e':
@@ -1112,22 +1112,22 @@ bool critModel(int critSet) {
 
 void fightViewW(Foe thisFoe,Player thisPlayer) {
     ucolor(LRed);
-    cout << "ï¿½Ð·ï¿½\n";
+    cout << "µÐ·½\n";
     Normal;
     cout << "HP " << thisFoe.nowHP << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisFoe.agg << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisFoe.def << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisFoe.crit << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½ " << thisFoe.handEngin.name << "\n\n";
+    cout << "¹¥»÷" << thisFoe.agg << "\n";
+    cout << "·ÀÓù" << thisFoe.def << "\n";
+    cout << "±©»÷" << thisFoe.crit << "\n";
+    cout << "ÎäÆ÷ " << thisFoe.handEngin.name << "\n\n";
     
     ucolor(LBlue);
-    cout << "ï¿½ï¿½ï¿½ï¿½\n";
+    cout << "¼º·½\n";
     Normal;
     cout << "HP " << thisPlayer.nowHP << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisPlayer.agg << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisPlayer.def << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisPlayer.crit << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½ " << thisPlayer.handEngin.name << "\n\n";
+    cout << "¹¥»÷" << thisPlayer.agg << "\n";
+    cout << "·ÀÓù" << thisPlayer.def << "\n";
+    cout << "±©»÷" << thisPlayer.crit << "\n";
+    cout << "ÎäÆ÷ " << thisPlayer.handEngin.name << "\n\n";
 }
 
 int EXPGotW(Player thisPlayer,Foe thisFoe) {
@@ -1163,9 +1163,9 @@ void foeToAggW(Player &thisPlayer,Foe &thisFoe) {
     }
     thisPlayer.nowHP -= agg;
     if(flat) {
-        print("ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+intToString(agg)+"ï¿½ï¿½ï¿½Ëºï¿½\n",false);
+        print("¶Ô·½´ò³öÁË±©»÷£¬Ôì³ÉÁË"+intToString(agg)+"µãÉËº¦\n",false);
     } else {
-        print("ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+intToString(agg)+"ï¿½ï¿½ï¿½Ëºï¿½\n",false);
+        print("¶Ô·½¸øÄãÔì³ÉÁË"+intToString(agg)+"µãÉËº¦\n",false);
     }
 }
 
@@ -1176,16 +1176,16 @@ void playerToAggW(Player &thisPlayer,Foe &thisFoe) {
     bool flat = critModel(thisPlayer.crit);
     thisFoe.nowHP -= agg;
     if(flat) {
-        print("ï¿½ï¿½ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+intToString(agg)+"ï¿½ï¿½ï¿½Ëºï¿½\n",false);
+        print("Äã´ò³öÁË±©»÷£¬Ôì³ÉÁË"+intToString(agg)+"µãÉËº¦\n",false);
     } else {
-        print("ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+intToString(agg)+"ï¿½ï¿½ï¿½Ëºï¿½\n",false);
+        print("Äã¸ø¶Ô·½Ôì³ÉÁË"+intToString(agg)+"µãÉËº¦\n",false);
     }
 }
 
 void wrestle(int arenaNum) {
     system("CLS");
-    if(player.handEngin.name == "ï¿½ï¿½") {
-        print("ï¿½ï¿½È¥ï¿½Ç¶ï¿½Ê¿ï¿½Ðµï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+    if(player.handEngin.name == "ÎÞ") {
+        print("ÏÈÈ¥½Ç¶·Ê¿ÖÐµÄ×°±¸¿âÖÐÑ¡ÔñÎäÆ÷°É\n");
         return;
     }
     Foe thisFoe;
@@ -1210,28 +1210,28 @@ void wrestle(int arenaNum) {
     ForEver {
         system("CLS");
         if(thisPlayer.nowHP <= 0 && thisFoe.nowHP <= 0) {
-            cout << "Æ½ï¿½ï¿½\n";
+            cout << "Æ½¾Ö\n";
             srand((unsigned)time(NULL));
             int got = EXPGotW(thisPlayer,thisFoe);
-            cout << "ï¿½ï¿½Ãµï¿½ï¿½ï¿½" << got << "ï¿½ã¾­ï¿½ï¿½Öµ\n";
-            cout << "ï¿½ï¿½Ãµï¿½ï¿½ï¿½" << thisFoe.G/2 << "G\n";
+            cout << "ÄãµÃµ½ÁË" << got << "µã¾­ÑéÖµ\n";
+            cout << "ÄãµÃµ½ÁË" << thisFoe.G/2 << "G\n";
             player.nowEXP += got/2;
             player.G += thisFoe.G/2;
             player.arenaNum += 100;
             char c = played();
             return;
         } else if(thisPlayer.nowHP <= 0) {
-            cout << "ï¿½ï¿½ï¿½Ï§\n";
+            cout << "Õæ¿ÉÏ§\n";
             win = false;
             char c = played();
             return;
         } else if (thisFoe.nowHP <= 0) {
-            cout << "ï¿½ï¿½Ó®ï¿½Ë£ï¿½\n";
+            cout << "ÄãÓ®ÁË£¡\n";
             win = true; 
             srand((unsigned)time(NULL));
             int got = EXPGotW(thisPlayer,thisFoe);
-            cout << "ï¿½ï¿½Ãµï¿½ï¿½ï¿½" << got << "ï¿½ã¾­ï¿½ï¿½Öµ\n";
-            cout << "ï¿½ï¿½Ãµï¿½ï¿½ï¿½" << thisFoe.G << "G\n";
+            cout << "ÄãµÃµ½ÁË" << got << "µã¾­ÑéÖµ\n";
+            cout << "ÄãµÃµ½ÁË" << thisFoe.G << "G\n";
             player.nowEXP += got;
             player.G += thisFoe.G;
             char c = played();
@@ -1272,7 +1272,7 @@ void storeView(int i,Enginery thisEngin) {
     thisEngin.printEnginLevel();
     Normal;
     cout << "\n";
-    cout << "  ï¿½ï¿½ï¿½ò»¨·ï¿½: " << thisEngin.inG << "G\n";
+    cout << "  ¹ºÂò»¨·Ñ: " << thisEngin.inG << "G\n";
 }
 
 void store() {
@@ -1283,7 +1283,7 @@ void store() {
     ucolor(LWhite);
     mcolor(LDark);
     ucolor(LWhite);
-    cout << "\t\t\tï¿½Ìµï¿½\n\t\t";
+    cout << "\t\t\tÉÌµê\n\t\t";
     Normal;
     cout << "   ";
     player.printG();
@@ -1295,7 +1295,7 @@ void store() {
     for(int i = 1;i < index;i++)
         storeView(i,tmp[i]);
     
-    cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ë¹ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ";
+    cout << "ÇëÊäÈë¹ºÂòÎäÆ÷µÄÐòºÅ: ";
     cin >> n;
     if(n > 0 && n <= index && player.G >= tmp[n].inG) {
         player.haveEngin(tmp[n]);
@@ -1305,9 +1305,9 @@ void store() {
                 engin[i].canBuy = false;
             }
         }
-        cout << "\nï¿½ï¿½ï¿½ï¿½É¹ï¿½\n";
+        cout << "\n¹ºÂò³É¹¦\n";
     } else {
-        cout << "\nï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½\n";
+        cout << "\n¹ºÂòÊ§°Ü\n";
     }
     char c = played();
 }
@@ -1319,21 +1319,21 @@ void fightViewA(Player thisPlayer,Mon thisMonster,int round) {
     
     cout << thisMonster.name << "\n";
     cout << "HP " << thisMonster.nowHP << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisMonster.agg << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisMonster.def << "\n\n";
+    cout << "¹¥»÷" << thisMonster.agg << "\n";
+    cout << "·ÀÓù" << thisMonster.def << "\n\n";
     
-    cout << "ï¿½ï¿½ï¿½ï¿½\n";
+    cout << "¼º·½\n";
     cout << "HP " << thisPlayer.nowHP << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisPlayer.agg << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisPlayer.def << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½" << thisPlayer.crit << "\n";
-    cout << "ï¿½ï¿½ï¿½ï¿½ " << thisPlayer.handEngin.name << "\n\n";
+    cout << "¹¥»÷" << thisPlayer.agg << "\n";
+    cout << "·ÀÓù" << thisPlayer.def << "\n";
+    cout << "±©»÷" << thisPlayer.crit << "\n";
+    cout << "ÎäÆ÷ " << thisPlayer.handEngin.name << "\n\n";
 }
 
 void monToAggA(Player &thisPlayer,Mon &thisMonster) {
     int agg = goAgg(thisPlayer.def,thisMonster.agg,thisMonster.highAgg,thisMonster.lowAgg);
     thisPlayer.nowHP -= agg;
-    print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+intToString(agg)+"ï¿½ï¿½ï¿½Ëºï¿½\n");
+    print("¹ÖÎï¸øÄãÔì³ÉÁË"+intToString(agg)+"µãÉËº¦\n");
 }
 
 void playerToAggA(Player &thisPlayer,Mon &thisMonster) {
@@ -1345,9 +1345,9 @@ void playerToAggA(Player &thisPlayer,Mon &thisMonster) {
         agg *= 2;
     thisMonster.nowHP -= agg;
     if(flat) {
-        print("ï¿½ï¿½ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+intToString(agg)+"ï¿½ï¿½ï¿½Ëºï¿½\n");
+        print("Äã´ò³öÁË±©»÷£¬Ôì³ÉÁË"+intToString(agg)+"µãÉËº¦\n");
     } else {
-        print("ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+intToString(agg)+"ï¿½ï¿½ï¿½Ëºï¿½\n");
+        print("Äã¸ø¶Ô·½Ôì³ÉÁË"+intToString(agg)+"µãÉËº¦\n");
     }
 }
 
@@ -1365,26 +1365,26 @@ int advView() {
     system("CLS");
     int index = 1;
     if(risk[1].canGo) {
-        cout << index << ".ï¿½ï¿½ï¿½Ã¶ï¿½Ñ¨\n";
+        cout << index << ".÷¼÷Ã¶´Ñ¨\n";
         index++;
     }
     if(risk[2].canGo) {
-        cout << index << ".ï¿½îº£ï¿½ï¿½\n";
+        cout << index << ".Éîº£¹µ\n";
         index++;
     }
     if(risk[3].canGo) {
-        cout << index << ".ï¿½Ø±ï¿½\n";
+        cout << index << ".µØ±¤\n";
         index++;
     }
     if(risk[4].canGo) {
-        cout << index << ".É³Ä®Õ½ï¿½ï¿½\n";
+        cout << index << ".É³Ä®Õ½³¡\n";
         index++;
     }
     if(index == 1) {
-        cout << "ï¿½ã»¹ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½\n";
+        cout << "Äã»¹²»ÄÜÃ°ÏÕ\n";
         return 0;
     }
-    cout << "ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½";
+    cout << "ÊäÈëÃ°ÏÕÃû³Æ£º";
     string s;
     cin >> s;
     for(int i = 1;i <= 5;i++) {
@@ -1418,7 +1418,7 @@ Mon createMonster(Map riskx,int index) {
 void holeADV() {
     system("CLS");
     srand((unsigned)time(NULL));
-    cout << "--------------ï¿½ï¿½" << player.holeNum << "ï¿½ï¿½--------------\n";
+    cout << "--------------µÚ" << player.holeNum << "¹Ø--------------\n";
     sleep(5);
     Player thisPlayer = player;
     int gotMonNum = Random(2,5);
@@ -1433,10 +1433,10 @@ void holeADV() {
     }
     system("CLS");
     if(player.holeNum < risk[1].gateNum) {
-        cout << "ï¿½ï¿½ï¿½Ø³É¹ï¿½\n";
+        cout << "´³¹Ø³É¹¦\n";
         player.holeNum++;
     } else {
-        cout << "ï¿½ï¿½Ï²ï¿½ã£¡ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½Ñ¨ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½\n";
+        cout << "¹§Ï²Äã£¡Íê³ÉÁË¡¸÷¼÷Ã¶´Ñ¨¡¹µØÍ¼£¡\n";
         risk[2].canGo = true;
     }
 }
@@ -1457,7 +1457,7 @@ void actionGame(string code);
 int main() {
     char move;
     system("CLS");
-    cout << "ï¿½ï¿½ï¿½ï¿½æµµï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1\n";
+    cout << "ÊäÈë´æµµ´úÂë£¬ÐÂÊÖÊäÈë1\n";
     string s;
     cin >> s;
     char c = played();
