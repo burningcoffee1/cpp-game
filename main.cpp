@@ -132,6 +132,8 @@ bool findWord(const string s1,const string s2) {
     return flag;
 }
 
+
+
 void wordWay(string word,int maxNum,string way = ".left") {
     long len = word.length();
     if(len > maxNum) return;
